@@ -1,7 +1,8 @@
 #include <stdlib.h>
 #include <time.h>
 #include <stdio.h>
-#include <raylib.h>
+#include <raylib/raylib.h>
+#include <raylib/raygui.h>
 #include "mazer.h"
 #include "util.h"
 
