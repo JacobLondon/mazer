@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <raylib/raylib.h>
 #include <raylib/raygui.h>
+#include <ds/ds.h>
 #include "mazer.h"
 #include "util.h"
 
@@ -10,6 +11,8 @@ int main(int argc, char **argv)
 {
     (void)argc;
     (void)argv;
+
+    struct VectorInt a;
 
     srand(time(NULL));
 
@@ -25,6 +28,13 @@ int main(int argc, char **argv)
     SetTargetFPS(60);
 
     while (!WindowShouldClose()) {
+        if (IsKeyPressed(KEY_R))
+        {
+            MazerDelete(m);
+            m = MazerNew(ROWS, COLS);
+            OK_OR_RETURN(m, 1);
+        }
+
         BeginDrawing();
         ClearBackground(RAYWHITE);
         for (size_t i = 0; i < MazerRows(m); i++) {
@@ -35,13 +45,6 @@ int main(int argc, char **argv)
             }
         }
         EndDrawing();
-
-        if (IsKeyPressed(KEY_R))
-        {
-            MazerDelete(m);
-            m = MazerNew(ROWS, COLS);
-            OK_OR_RETURN(m, 1);
-        }
     }
     CloseWindow();
 
