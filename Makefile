@@ -11,7 +11,7 @@ TARGET_T = far.exe
 TARGET_C := $(wildcard *.c)
 TARGET_H := $(wildcard *.h)
 
-.PHONY: clean
+.PHONY: $(TARGET_T) clean
 
 $(TARGET_T): $(TARGET_C) $(TARGET_H)
 	$(CC) -o $@ build.c $(CFLAGS)
