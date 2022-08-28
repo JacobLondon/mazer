@@ -24,7 +24,7 @@ float HkmnGetDefense(Hkmn *self);
 float HkmnGetSpAtk(Hkmn *self);
 float HkmnGetSpDef(Hkmn *self);
 
-void HkmnDamage(Hkmn *self, float amount); // always does AT LEAST 1 damage
+void HkmnDamage(Hkmn *self, float amount); // always does AT LEAST 1 damage and will critical here on the low percent
 
 /**
  * 2.0f if super effective
